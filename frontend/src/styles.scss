@@ -2,14 +2,14 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-$custom-primary: mat.define-palette(mat.$blue-palette);
-$custom-secondaty: mat.define-palette(mat.$indigo-palette, A200, A400, 700);
+$custom-primary: mat.define-palette(mat.$gray-palette, 900);
+$custom-secondary: mat.define-palette(mat.$blue-palette, A200, A400, 700);
 $custom-warn: mat.define-palette(mat.$red-palette);
 
 $custom-theme: mat.define-light-theme((
   color: (
     primary: $custom-primary,
-    accent: $custom-secondaty,
+    accent: $custom-secondary,
     warn: $custom-warn,
   ),
   typography: mat.define-typography-config(),
