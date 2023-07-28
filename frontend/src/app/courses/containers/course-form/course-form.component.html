@@ -1,0 +1,33 @@
+<mat-card style="margin: 30px;">
+
+  <mat-toolbar color="primary">Course Details</mat-toolbar>
+
+  <mat-card-content style="margin-top: 15px;">
+    <form [formGroup]="form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Name" formControlName="name" #name>
+        <mat-hint align="end">{{name.value.length || 0}}/20</mat-hint>
+        <mat-error *ngIf="form.get('name')?.invalid">{{
+          getErrorMessage('name')
+        }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option value=""> </mat-option>
+          <mat-option value="front-end">Front-End</mat-option>
+          <mat-option value="back-end">Back-End</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('category')?.invalid">{{
+          getErrorMessage('category')
+        }}</mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+    <button mat-raised-button color="warn" (click)="onCancel()" style="margin-left: 5px;">Cancel</button>
+  </mat-card-actions>
+</mat-card>
