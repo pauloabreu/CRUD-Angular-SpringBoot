@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  spring-backend:
+    image: spring-backend
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    networks:
+      - dev-network
+
+  crud-frontend:
+    image: crud-frontend
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    networks:
+      - dev-network
+
+networks:
+  dev-network:
+    name: dev-network
+    driver: bridge
