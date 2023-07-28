@@ -33,14 +33,12 @@ public class Course {
     @Column(length = 20, nullable = false)
     private String name;
 
-    @NotBlank
     @NotNull
     @Pattern(regexp = "back-end|front-end")
     @Length(max = 10)
     @Column(length = 10, nullable = false)
     private String category;
 
-    @NotBlank
     @NotNull
     @Pattern(regexp = "active|inactive")
     @Length(max = 10)
